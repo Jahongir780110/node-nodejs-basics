@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const rename = async () => {
   const srcFile = path.join(__dirname, "files", "wrongFilename.txt");
-  const destFile = path.join(__dirname, "properFilename.md");
+  const destFile = path.join(__dirname, "files", "properFilename.md");
 
   if (!fs.existsSync(srcFile) || fs.existsSync(destFile)) {
     throw new Error("FS operation failed");

@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const calculateHash = async () => {
   const srcFile = path.join(__dirname, "files", "fileToCalculateHashFor.txt");
-  const fileContent = fs.readFileSync(srcFile);
+  const fileContent = await fs.promises.readFile(srcFile);
   const hash = crypt.createHash("sha256").update(fileContent).digest("hex");
   console.log(hash);
 };
